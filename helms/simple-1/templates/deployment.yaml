@@ -28,7 +28,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: {{ .Values.name }}-pv
+            claimName: {{ .Values.devspace.name }}-pv
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -39,6 +39,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - mountPath: /usr/share/nginx/html
+              subPath: project/devsapce-demo
               name: data
           ports:
             - name: http
