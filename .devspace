@@ -8,5 +8,5 @@ softwares:
         targetPort: 8080
     name: opm
     options:
-      ide: webstorm
+      ide: idea-c
     type: projector
